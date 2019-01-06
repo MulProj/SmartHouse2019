@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Opis</th>
+        <th scope="col">Operacja</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of allHouses$ | async">
+        <th scope="row">{{p.houseId}}</th>
+        <td>{{p.description}}</td>
+        <td>
+            <button type="button" class="btn btn-primary">Edytuj</button>
+            <button type="button" class="btn btn-primary">Usuń</button>
+        
+        </td>
+      </tr>
+    </tbody>
+  </table>
