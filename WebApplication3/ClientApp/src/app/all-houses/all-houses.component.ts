@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../Service/http.service';
 import { Observable } from 'rxjs';
+import { House } from '../app.component';
 
 @Component({
   selector: 'app-all-houses',
@@ -17,25 +18,27 @@ export class AllHousesComponent implements OnInit{
     ngOnInit(): void {
       this.allHouses$ = this.httpService.getHouses()
     }
+
+    addHouse(){
+      const h: House=({
+        description: 'Opis dodanego domu',
+      });
+
+      this.httpService.addHouse(h).subscribe(house=>{
+        console.log(house);
+      })
+
+
+    }
+    toF(a)
+    {
+      console.log(a);
+    }
+
   }
 
 
 
   
 
-export interface House{
-  houseId?: number;
-  description?: string;
-  sensors?: Sensor[];
-  
-}
-export interface Sensor{
-  temperature?: number;
-  humidity?: number;
-  smoke?: number;
-  isMove?: number;
-  sensorId?: number;
-  isOn?: boolean;
-  houseId?: number;
-  house?: House[];
-}
+

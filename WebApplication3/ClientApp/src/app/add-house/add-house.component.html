@@ -1,3 +1,9 @@
-<p>
-  add-house works!
-</p>
+<form role="form">
+  <br style="clear:both">
+      <h3 style="margin-bottom: 25px; text-align: center;">Dodaj mieszkanie</h3>
+    <div class="form-group">
+      <input type="text" class="form-control" id="name" name="name" placeholder="Opis" (input)="changeValue($event)" required>
+    </div>
+    
+    <button (click)="addHouse()" class="btn btn-primary pull-right">Dodaj mieszkanie</button>
+</form>

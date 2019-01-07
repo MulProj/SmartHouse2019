@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../Service/http.service';
-import { House, Sensor } from '../all-houses/all-houses.component';
 import { Observable } from 'rxjs';
+import { Sensor } from '../app.component';
 
 @Component({
   selector: 'app-sensors',

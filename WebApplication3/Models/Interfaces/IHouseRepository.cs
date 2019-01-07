@@ -7,5 +7,7 @@ namespace WebApplication3.Models.Interfaces
         int AddHouse(House house);
         List<House> GetAllHouses();
         House GetHouse(int houseId);
+        void DeleteHouse(House house);
+        int UpdateHouse(House house);
     }
 }

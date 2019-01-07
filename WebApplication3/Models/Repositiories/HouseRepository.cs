@@ -41,5 +41,28 @@ namespace WebApplication3.Models.Repositiories
 
             return _databaseContext.Houses.FirstOrDefault(house => house.HouseId == houseId);
         }
+        public int UpdateHouse(House house)
+        {
+            if (house == null)
+            {
+                throw new Exception("Sensore object cannot be null");
+            }
+
+            _databaseContext.Houses.Update(house);
+            _databaseContext.SaveChanges();
+
+            return house.HouseId;
+        }
+        public void DeleteHouse(House house)
+        {
+            if (house == null)
+            {
+                throw new Exception("Sensore object cannot be null");
+            }
+
+            _databaseContext.Houses.Remove(house);
+            _databaseContext.SaveChanges();
+        }
+
     }
 }

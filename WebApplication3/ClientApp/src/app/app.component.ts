@@ -8,3 +8,20 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ClientApp';
 }
+
+export interface House{
+  houseId?: number;
+  description?: string;
+  sensors?: Sensor[];
+  
+}
+export interface Sensor{
+  temperature?: number;
+  humidity?: number;
+  smoke?: number;
+  isMove?: number;
+  sensorId?: number;
+  isOn?: boolean;
+  houseId?: number;
+  house?: House[];
+}

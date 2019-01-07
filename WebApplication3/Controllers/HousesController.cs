@@ -45,5 +45,37 @@ namespace WebApplication3.Controllers
 
             return new JsonResult(_houseRepository.GetHouse(houseId));
         }
+        [HttpGet("[action]")]
+        public IActionResult DeleteHouse(int houseId)
+        {
+            if (houseId <= 0)
+            {
+                return BadRequest();
+            }
+
+            var house = _houseRepository.GetHouse(houseId);
+
+            if (house == null)
+            {
+                return NotFound("Cannot find sensor with provided sensorId.");
+            }
+
+            _houseRepository.DeleteHouse(house);
+
+            return new JsonResult(houseId);
+        }
+
+        [HttpPost("[action]")]
+        public IActionResult UpdateHouse([FromBody] House house)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            _houseRepository.UpdateHouse(house);
+
+            return new JsonResult(house.HouseId);
+        }
     }
 }

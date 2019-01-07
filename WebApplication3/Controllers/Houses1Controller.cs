@@ -10,7 +10,7 @@ using WebApplication3.Models.Database;
 
 namespace WebApplication3.Controllers
 {
-    [Route("api/[controller]")]
+/*    [Route("api/[controller]")]
     [ApiController]
     public class Houses1Controller : ControllerBase
     {
@@ -122,5 +122,5 @@ namespace WebApplication3.Controllers
         {
             return _context.Houses.Any(e => e.HouseId == id);
         }
-    }
+    }*/
 }

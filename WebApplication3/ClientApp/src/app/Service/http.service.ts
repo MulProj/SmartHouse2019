@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { House, Sensor } from '../all-houses/all-houses.component';
 import { Observable } from 'rxjs';
+import { House, Sensor } from '../app.component';
 
 @Injectable()
 
@@ -15,5 +15,9 @@ export class HttpService {
 
   getSensors() :Observable<Array<Sensor>>{
     return this.http.get<Array<Sensor>>('https://localhost:5001/api/sensors/getsensors')
+  }
+
+  addHouse(house: House):Observable<House>{
+    return this.http.post('https://localhost:5001/api/Houses/addhouse', house)
   }
 }

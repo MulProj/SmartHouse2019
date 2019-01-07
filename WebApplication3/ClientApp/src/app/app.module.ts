@@ -20,6 +20,7 @@ import { SupportComponent } from './support/support.component';
 import { PlaceComponent } from './place/place.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from './Service/http.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,9 @@ import { HttpService } from './Service/http.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+  
   ],
   providers: [
     HttpService
